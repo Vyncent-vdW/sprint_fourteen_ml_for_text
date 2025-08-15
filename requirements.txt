@@ -1,0 +1,48 @@
+###############################################################################
+# Sentiment Classification Project Dependencies (nb_14.ipynb)
+#
+# These versions are pinned for reproducibility. They reflect stable releases
+# compatible with Python 3.9–3.11 and the modeling stack used (TF‑IDF, LightGBM,
+# spaCy lemmatization, and BERT via transformers + torch CPU).
+#
+# After creating a virtual environment:
+#   pip install -r requirements.txt
+#   python -m spacy download en_core_web_sm
+#
+# If a platform-specific torch wheel is preferred (with CUDA), install torch
+# separately per https://pytorch.org/get-started/locally/ before the rest.
+###############################################################################
+
+numpy==1.26.4            # Numeric arrays (base dependency for ML libs)
+pandas==2.2.2            # DataFrame operations / EDA
+scikit-learn==1.4.2      # TF-IDF, LogisticRegression, metrics
+scipy==1.11.4            # Sparse matrices & linear algebra backend
+lightgbm==4.3.0          # Gradient boosting model (Model 4)
+
+nltk==3.8.1              # Stopwords for baseline TF-IDF
+spacy==3.7.4             # Lemmatization pipeline (Model 3)
+catalogue<2.1.0,>=2.0.0  # (Sometimes needed explicitly for spaCy env resolution)
+
+matplotlib==3.8.4        # Plotting (evaluation curves)
+seaborn==0.13.2          # Statistical visualization aesthetics
+tqdm==4.66.4             # Progress bars (embedding generation, apply)
+
+transformers==4.41.2     # BERT tokenizer & model (Model 9)
+torch==2.2.2             # PyTorch backend for transformers (CPU build)
+tokenizers==0.19.1       # Explicit pin to avoid binary mismatch edge cases
+
+# Optional / nice-to-have for experimentation & notebook UX
+ipykernel==6.29.4        # Jupyter kernel management
+ipywidgets==8.1.2        # Interactive widgets (optional)
+
+# Version management / reproducibility helpers (optional)
+python-dotenv==1.0.1     # Env var management if adding configs later
+
+###############################################################################
+# Notes:
+# 1. en_core_web_sm is NOT listed here because it's installed via spaCy model
+#    download command (produces a local package). Run after installation.
+# 2. If encountering binary issues with torch on Apple Silicon / CUDA machines,
+#    follow PyTorch site instructions; then re-run remaining installs without torch.
+# 3. Remove unused optional packages if minimizing footprint for production.
+###############################################################################
