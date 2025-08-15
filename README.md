@@ -1,4 +1,4 @@
-🎬 Movie Review Sentiment Classification
+# 🎬 Movie Review Sentiment Classification
 
 This repository contains the notebook `nb_14.ipynb` implementing an end‑to‑end sentiment classification workflow on an IMDB‑style movie reviews dataset (`imdb_reviews.tsv`). The project objective is to build a robust binary classifier that detects negative reviews with a target test F1 ≥ 0.85 while balancing accuracy, interpretability, and operational efficiency.
 
